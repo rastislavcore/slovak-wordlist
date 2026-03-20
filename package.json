@@ -1,0 +1,30 @@
+{
+  "name": "slovak-wordlist",
+  "version": "1.0.0",
+  "description": "Slovak mnemonic wordlist",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node build.js && mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rastislavcore/slovak-wordlist.git"
+  },
+  "keywords": [
+    "slovak",
+    "svk",
+    "mnemonic",
+    "wordlist"
+  ],
+  "author": "Rastislav Core",
+  "license": "CORE",
+  "bugs": {
+    "url": "https://github.com/rastislavcore/slovak-wordlist/issues"
+  },
+  "homepage": "https://github.com/rastislavcore/slovak-wordlist#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
