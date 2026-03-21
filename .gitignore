@@ -1,3 +1,6 @@
+# Output files
+slovak-wordlist.txt
+
 node_modules/**
 
 **/*.swp

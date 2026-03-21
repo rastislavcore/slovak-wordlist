@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
-    "test": "node build.js && mocha --recursive"
+    "test": "node build.js && mocha checker.test.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,19 @@
     "wordlist"
   ],
   "author": "Rastislav Core",
-  "license": "CORE",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/rastislavcore/slovak-wordlist/issues"
   },
   "homepage": "https://github.com/rastislavcore/slovak-wordlist#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^10.2.0"
+    "mocha": "^11.7.5"
+  },
+  "overrides": {
+    "glob": "^13.0.6"
   }
 }

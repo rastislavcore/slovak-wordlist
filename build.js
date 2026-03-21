@@ -1,13 +1,25 @@
 const fs = require('fs');
+const path = require('path');
 
-// Assuming you've read the wordlist-slovak.txt into a string called `wordlist`
-const wordlist = fs.readFileSync('wordlist-slovak.txt', 'utf8');
+const inputPath = path.join(__dirname, 'wordlist-slovak.txt');
+const outputPath = path.join(__dirname, 'slovak-wordlist.txt');
 
-const parsedWordlist = wordlist.split('\n').map(line => {
-    if (line.includes(': ')) {
-        return line.split(': ')[1].split(', ');
-    }
-    return [];
-}).flat().sort();
+const wordlist = fs.readFileSync(inputPath, 'utf8');
 
-fs.writeFileSync('slovak.txt', parsedWordlist.join('\n'), 'utf8');
+const parsedWordlist = wordlist
+    .split(/\r?\n/)
+    .map((line) => {
+        const sep = ': ';
+        const idx = line.indexOf(sep);
+        if (idx === -1) return [];
+        return line
+            .slice(idx + sep.length)
+            .split(', ')
+            .map((w) => w.trim())
+            .filter(Boolean);
+    })
+    .flat()
+    .sort((a, b) => a.localeCompare(b, 'sk'));
+
+const out = parsedWordlist.join('\n') + '\n';
+fs.writeFileSync(outputPath, out, 'utf8');
