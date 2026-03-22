@@ -63,6 +63,51 @@ function getWordlistLength() {
     return wordlist.length;
 }
 
+function loadDataWordSet(filename) {
+    const p = path.join(__dirname, 'data', filename);
+    if (!fs.existsSync(p)) return null;
+    const set = new Set();
+    for (const line of fs.readFileSync(p, 'utf8').split(/\r?\n/)) {
+        const t = line.trim();
+        if (!t || t.startsWith('#')) continue;
+        set.add(t.toLowerCase());
+    }
+    return set;
+}
+
+/**
+ * Nouns only: Kaikki (Wiktionary) Slovak noun/verb data + supplement for OOV lemmas.
+ * Fails if a lemma is attested only as a verb, matches an OOV infinitive shape (-ovať),
+ * or is not in noun ∪ supplement.
+ */
+function checkNouns() {
+    const nounLex = loadDataWordSet('sk_nouns_kaikki_ascii.txt');
+    const verbLex = loadDataWordSet('sk_verbs_kaikki_ascii.txt');
+    const supplement = loadDataWordSet('sk_noun_lexicon_supplement.txt');
+    if (!nounLex || !verbLex || !supplement) {
+        return {
+            ok: false,
+            missingFiles: true,
+            violations: ['missing data/sk_nouns_kaikki_ascii.txt, sk_verbs_kaikki_ascii.txt, or sk_noun_lexicon_supplement.txt']
+        };
+    }
+    const violations = [];
+    for (const w of wordlist) {
+        if (nounLex.has(w)) continue;
+        if (supplement.has(w)) continue;
+        if (verbLex.has(w)) {
+            violations.push(w);
+            continue;
+        }
+        if (w.length >= 6 && /ovat$/.test(w)) {
+            violations.push(w);
+            continue;
+        }
+        violations.push(w);
+    }
+    return { ok: violations.length === 0, missingFiles: false, violations };
+}
+
 module.exports = {
     checkDuplicates,
     checkWordLength,
@@ -70,5 +115,6 @@ module.exports = {
     checkDiacriticalMarks,
     checkSimilarWords,
     checkWordCount,
-    getWordlistLength
+    getWordlistLength,
+    checkNouns
 };

@@ -16,7 +16,7 @@ npm install
 
 1. **Building the wordlist:**
 
-   You can build the wordlist and save it as `slovak.txt` by running:
+   You can build the wordlist and save it as `slovak-wordlist.txt` by running:
 
    ```bash
    npm run build

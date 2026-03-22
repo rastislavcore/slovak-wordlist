@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
-    "test": "node build.js && mocha checker.test.js"
+    "test": "node build.js && mocha checker.test.js",
+    "scrape:alphabet": "node scripts/scrape-slovensky-alphabet.mjs",
+    "build:lexicon": "curl -sL --fail 'https://kaikki.org/dictionary/Slovak/kaikki.org-dictionary-Slovak.jsonl' | node scripts/build-sk-noun-lexicon.mjs",
+    "regenerate:noun-supplement": "node build.js && node scripts/regenerate-noun-supplement.mjs"
   },
   "repository": {
     "type": "git",
