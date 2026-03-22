@@ -5,6 +5,7 @@ abrazia
 absces
 absorber
 abstrakt
+adept
 admiral
 advent
 aerobik
@@ -12,6 +13,7 @@ agave
 agent
 agnostik
 agogika
+agronom
 akademia
 akcent
 akord
@@ -65,7 +67,11 @@ avizo
 axel
 axioma
 bahno
+balik
 banda
+barbar
+barel
+baroko
 batoh
 bedac
 beletria
@@ -185,6 +191,7 @@ dotyk
 dravec
 drazba
 duel
+duchna
 dusno
 eden
 edicia
@@ -320,7 +327,6 @@ gorila
 gotika
 grafika
 graham
-gram
 grant
 gratis
 gremium
@@ -355,6 +361,7 @@ hlbka
 hliadka
 hlodavec
 hltan
+hmat
 hmota
 hmyz
 hnev
@@ -409,7 +416,7 @@ impulz
 imunita
 incident
 index
-indigo
+indicia
 indukcia
 infuzia
 ingot
@@ -574,7 +581,6 @@ loksa
 lopuch
 loteria
 lovec
-lucerna
 luxus
 maciatko
 magma
@@ -594,6 +600,7 @@ medaila
 medzera
 melon
 metoda
+mierka
 mikrofon
 milnik
 minister
@@ -617,6 +624,7 @@ nadpis
 nadych
 nafta
 nalepka
+nano
 napoj
 naradie
 narcis
@@ -629,10 +637,12 @@ navrat
 nerez
 netvor
 neutron
+noblesa
 nomad
 notar
 nylon
 obal
+obava
 obilie
 objekt
 obklad
@@ -669,9 +679,11 @@ plod
 pobyt
 podiel
 polica
+potapac
 poter
 pristroj
 prut
+pytlik
 rada
 ragby
 ranc
@@ -691,6 +703,7 @@ replika
 retaz
 riadenie
 rizoto
+rodeo
 rolak
 rolnik
 rovina
@@ -717,6 +730,7 @@ skuska
 skutok
 slahacka
 slecna
+smola
 smyk
 snaha
 snura
@@ -753,6 +767,7 @@ text
 tiger
 titul
 tlama
+tobogan
 tranzit
 trasa
 trener
@@ -760,10 +775,12 @@ treska
 trieda
 trik
 tromf
+tron
 trubka
 trzba
 tundra
 tunel
+tuniak
 udaj
 ukazka
 unia
@@ -789,12 +806,15 @@ vesmir
 vchod
 vidlica
 vklad
+vlajka
+vlhko
 vlocka
 vrstva
 vybor
 vydych
 vysielac
 vyska
+vyziva
 vzor
 zabava
 zaber
