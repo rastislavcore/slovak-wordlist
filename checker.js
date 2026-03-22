@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const slovakPath = path.join(__dirname, 'slovak.txt');
+const slovakPath = path.join(__dirname, 'slovak-wordlist.txt');
 const wordlist = fs
     .readFileSync(slovakPath, 'utf8')
     .split(/\r?\n/)
@@ -59,11 +59,16 @@ function checkWordCount() {
     return wordlist.length === 2048;
 }
 
+function getWordlistLength() {
+    return wordlist.length;
+}
+
 module.exports = {
     checkDuplicates,
     checkWordLength,
     checkUniqueFirstFour,
     checkDiacriticalMarks,
     checkSimilarWords,
-    checkWordCount
+    checkWordCount,
+    getWordlistLength
 };

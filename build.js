@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = path.join(__dirname, 'wordlist-slovak.txt');
+const inputPath = path.join(__dirname, 'base-wordlist-slovak.txt');
 const outputPath = path.join(__dirname, 'slovak-wordlist.txt');
 
 const wordlist = fs.readFileSync(inputPath, 'utf8');
