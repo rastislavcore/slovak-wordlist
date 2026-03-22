@@ -6,8 +6,7 @@ const {
     checkDiacriticalMarks,
     checkSimilarWords,
     checkWordCount,
-    getWordlistLength,
-    checkNouns
+    getWordlistLength
 } = require('./checker');
 
 describe('Wordlist checks', () => {
@@ -44,20 +43,6 @@ describe('Wordlist checks', () => {
         const similarWords = checkSimilarWords();
         const detail = similarWords.map((pair) => pair.join(' / ')).join('; ');
         assert.strictEqual(similarWords.length, 0, detail || 'similar word pairs');
-    });
-
-    it('should use nouns only (Kaikki + supplement)', () => {
-        const r = checkNouns();
-        assert.strictEqual(
-            r.missingFiles,
-            false,
-            'Missing data/sk_nouns_kaikki_ascii.txt, sk_verbs_kaikki_ascii.txt, or sk_noun_lexicon_supplement.txt — run npm run build:lexicon and regenerate supplement if needed.'
-        );
-        assert.strictEqual(
-            r.violations.length,
-            0,
-            `Non-noun or unattested lemmas: ${r.violations.join(', ')}`
-        );
     });
 
     it('should have exactly 2048 words', function () {

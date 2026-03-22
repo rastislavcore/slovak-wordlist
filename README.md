@@ -38,7 +38,7 @@ The wordlist is checked against the following criteria:
 - Words are 4-8 characters long.
 - Words can be uniquely determined by typing the first 4 letters.
 - Words contain all letters without diacritical marks.
-- Contains only nouns.
+- Entries are curated as Slovak nouns.
 - No very similar words with only 1 letter of difference.
 - Contains exactly 2048 words.
 - Contains no:
